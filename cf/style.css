@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    transition: opacity ease-in 0.2s;
+}
+
+*,
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.border-corner-purple {
+    background-image: url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 0L4 0.5L0.525714 0.5L0.525714 3L-1.31134e-07 3L0 -1.74846e-07L4 0Z' fill='%23D4A0FF' transform='rotate(0)'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 3L4 2.5L0.525714 2.5L0.525714 1.2275e-07L-1.62239e-07 1.41324e-07L0 3L4 3Z' fill='%23D4A0FF'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 0L4 0.5L0.525714 0.5L0.525714 3L-1.31134e-07 3L0 -1.74846e-07L4 0Z' fill='%23D4A0FF' transform='rotate(180 2 1.5)'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0L2.90771e-08 0.5L3.47429 0.5L3.47429 3L4 3L4 -1.74846e-07L0 0Z' fill='%23D4A0FF'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 100%, 100% 100%, 100% 0;
+}
+
+.border-corner-neutral-400 {
+    background-image: url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 0L4 0.5L0.525714 0.5L0.525714 3L-1.31134e-07 3L0 -1.74846e-07L4 0Z' fill='%23a3a3a3' transform='rotate(0)'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 3L4 2.5L0.525714 2.5L0.525714 1.2275e-07L-1.62239e-07 1.41324e-07L0 3L4 3Z' fill='%23a3a3a3'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 0L4 0.5L0.525714 0.5L0.525714 3L-1.31134e-07 3L0 -1.74846e-07L4 0Z' fill='%23a3a3a3' transform='rotate(180 2 1.5)'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0L2.90771e-08 0.5L3.47429 0.5L3.47429 3L4 3L4 -1.74846e-07L0 0Z' fill='%23a3a3a3'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 100%, 100% 100%, 100% 0;
+}
+
+.animate-carousel-scroll-animation {
+    animation: carousel-scroll 20s linear infinite;
+}
+
+@keyframes carousel-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 0.5rem));
+    }
+}
